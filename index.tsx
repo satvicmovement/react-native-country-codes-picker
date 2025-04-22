@@ -154,7 +154,7 @@ export const CountryPicker = ({
     }, [showOnly, excludedCountries, lang]);
 
     const resultCountries = React.useMemo(() => {
-        const lowerSearchValue = searchValue.toLowerCase();
+        const lowerSearchValue = searchValue.trim().toLowerCase();
 
         return codes.filter((country) => {
             if (country?.dial_code.includes(searchValue) ||
